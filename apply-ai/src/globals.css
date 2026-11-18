@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ :root {
+  --background: 45 27% 97%;
+  --foreground: 105 19% 15%;
+  --card: 48 33% 99%;
+  --card-foreground: 105 19% 15%;
+  --popover: 48 33% 99%;
+  --popover-foreground: 105 19% 15%;
+  --primary: 108 19% 15%;
+  --primary-foreground: 48 33% 98%;
+  --secondary: 75 21% 91%;
+  --secondary-foreground: 105 19% 15%;
+  --muted: 75 16% 92%;
+  --muted-foreground: 86 8% 43%;
+  --accent: 75 21% 90%;
+  --accent-foreground: 105 19% 15%;
+  --destructive: 350 46% 38%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 70 14% 86%;
+  --input: 70 14% 82%;
+  --ring: 100 18% 36%;
+  --radius: 0.65rem;
+ }
+ * { @apply border-border; }
+ body { @apply bg-background text-foreground; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+ button, input, select, textarea { font: inherit; }
+ button { touch-action: manipulation; }
+ button:focus-visible, a:focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2; }
+ ::selection { background: #dce3cc; }
+}
+@layer utilities {
+ .font-serif { font-family: 'Lora', Georgia, serif; }
+}
+@layer components {
+ .panel { @apply rounded-xl border bg-card; box-shadow: 0 2px 3px rgb(34 46 31 / 1%); }
+ .field { @apply w-full rounded-lg border bg-card px-3 py-2.5 text-sm font-normal normal-case tracking-normal outline-none transition-shadow focus:ring-2 focus:ring-ring/30; }
+ .field-label { @apply text-xs font-medium capitalize; }
+ .status-badge { @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-1 text-[10px] font-medium; }
+ .status-interested { background: #e9e8e1; color: #676858; }
+ .status-applied { background: #e4eaf1; color: #52677d; }
+ .status-assessment { background: #f2e9d4; color: #8c6c2c; }
+ .status-interview { background: #ece3ed; color: #7b5e7e; }
+ .status-offer { background: #e1e9d5; color: #50673f; }
+ .status-rejected { background: #f0e2dd; color: #985c4d; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
